@@ -48,16 +48,43 @@
 <br/>
 
 
-## 4. 팀 커뮤니케이션
+## 4. 담당 역할(기여도 20%)
 
-### **4.1 커뮤니케이션 규칙**
-- 매일 **오전 9시** 데일리 스크럼 진행
-    - **어제 한 일**, **오늘 할 일**, **프로젝트 현황** 등을 공유하며 진행 상황 점검.
-- **Git flow 전략**으로 브랜치 관리, **PR**을 통한 이슈 관리
-- 문서 공유 및 회의 기록은 **Notion**을 통해 관리.
-- **Jira를 통한 스크럼 기반 일정 관리**
-<img width="80%" alt="image" src="https://github.com/user-attachments/assets/baba05b3-87fb-4a75-8ab3-908facec30ae" />
+### 4.1 로그인 및 회원 가입 구현(Spring Security, JWT, Kakao Oauth2.0)
+[일반 로그인과 소셜 로그인을 필터를 통해 분기 처리](https://github.com/HideOnCodec/Tkitem-Backend/tree/develop/src/main/java/tkitem/backend/global/security/login)
+- [/auth/login : 일반 로그인(General)](https://github.com/HideOnCodec/Tkitem-Backend/blob/develop/src/main/java/tkitem/backend/global/security/login/CustomJsonUsernameAuthenticationFilter.java)
 
+- [/auth/login/kakao : 소셜 로그인(Social)](https://github.com/HideOnCodec/Tkitem-Backend/blob/develop/src/main/java/tkitem/backend/global/security/login/CustomSocialLoginAuthenticationFilter.java)
+
+- [OIDC 프로토콜을 이용한 서명 검증 구현](https://github.com/HideOnCodec/Tkitem-Backend/blob/develop/src/main/java/tkitem/backend/global/security/login/OidcService.java)
+
+- [Hash 처리 및 비밀번호 암호화](https://github.com/HideOnCodec/Tkitem-Backend/blob/develop/src/main/java/tkitem/backend/domain/member/service/MemberServiceImpl.java)
+
+- [Redis를 이용한 토큰 검증, 자동 만료 구현](https://github.com/HideOnCodec/Tkitem-Backend/blob/develop/src/main/java/tkitem/backend/global/security/jwt/JwtAuthenticationProcessingFilter.java)
+<img width="60%" alt="image" src="https://github.com/user-attachments/assets/c511964e-2691-498b-97a1-3fc4043cbab5" />
+<img width="40%" alt="image" src="https://github.com/user-attachments/assets/4730cbe1-b45b-432f-8ae5-d02bd2cb00bd" />
+
+<div/>
+<div/>
+    
+### 4.2 설문 조사를 통한 사용자 패션 취향 MBTI(16가지) 계산
+- [HuggingFace의 Fashion-Clip 모델을 이용한 패션 이미지 분석](https://github.com/HideOnCodec/Tkitem-Backend/blob/develop/src/main/resources/prompts/fashion_clip.py)
+
+- [Spring AI, Open AI를 통한 사용자 첨부 이미지 실시간 분석](https://github.com/HideOnCodec/Tkitem-Backend/blob/develop/src/main/java/tkitem/backend/domain/preference/service/PreferenceAnalyzeServiceImpl.java)
+<img width="90%" alt="image" src="https://github.com/user-attachments/assets/9895f5a8-70a3-4466-a239-857bfc810484" />
+
+
+### 4.3 AWS, OCI, Docker, Github Actions 블루 그린 무중단 배포 
+
+- Nginx를 이용한 블루 그린 배포 전략 적용
+<img width="1708" height="804" alt="image" src="https://github.com/user-attachments/assets/018065ab-40dc-4c2e-bad2-e307bb45255b" />
+
+- 배포 성공 또는 cpu 임계치 초과 시 알림
+<img width="80%" alt="image" src="https://github.com/user-attachments/assets/40e0a897-20d3-4eeb-af30-3aa80a564309" />
+
+
+### 4.4 CloudFront를 이용한 S3 이미지 조회 속도 향상 (CDN)
+- [이미지 조회 시 Cloud Front 적용](https://github.com/HideOnCodec/Tkitem-Backend/blob/develop/src/main/java/tkitem/backend/global/util/CloudFrontUtil.java)
 
 <br/>
 <br/>
